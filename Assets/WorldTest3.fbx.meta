@@ -1,0 +1,275 @@
+fileFormatVersion: 2
+guid: 8af8c9808b26bbc4da5a589e48d9b95f
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: Cube
+    100002: Cube.001
+    100004: Cube.002
+    100006: Cube.003
+    100008: Cube.004
+    100010: Cube.005
+    100012: Cube.006
+    100014: Icosphere
+    100016: Icosphere.001
+    100018: Icosphere.002
+    100020: Icosphere.003
+    100022: Icosphere.004
+    100024: Icosphere.005
+    100026: Icosphere.006
+    100028: Icosphere.007
+    100030: Plane
+    100032: Plane.001
+    100034: Plane.002
+    100036: Plane.003
+    100038: Plane.004
+    100040: Plane.005
+    100042: Plane.006
+    100044: Plane.007
+    100046: Plane.008
+    100048: Plane.009
+    100050: Sun
+    100052: //RootNode
+    400000: Cube
+    400002: Cube.001
+    400004: Cube.002
+    400006: Cube.003
+    400008: Cube.004
+    400010: Cube.005
+    400012: Cube.006
+    400014: Icosphere
+    400016: Icosphere.001
+    400018: Icosphere.002
+    400020: Icosphere.003
+    400022: Icosphere.004
+    400024: Icosphere.005
+    400026: Icosphere.006
+    400028: Icosphere.007
+    400030: Plane
+    400032: Plane.001
+    400034: Plane.002
+    400036: Plane.003
+    400038: Plane.004
+    400040: Plane.005
+    400042: Plane.006
+    400044: Plane.007
+    400046: Plane.008
+    400048: Plane.009
+    400050: Sun
+    400052: //RootNode
+    2100000: Ground
+    2100002: water
+    2100004: Material.006
+    2100006: Material.005
+    2100008: Material.003
+    2100010: Material.008
+    2100012: Material.007
+    2100014: No Name
+    2100016: Material.009
+    2300000: Cube
+    2300002: Cube.001
+    2300004: Cube.002
+    2300006: Cube.003
+    2300008: Cube.004
+    2300010: Cube.005
+    2300012: Cube.006
+    2300014: Icosphere
+    2300016: Icosphere.001
+    2300018: Icosphere.002
+    2300020: Icosphere.003
+    2300022: Icosphere.004
+    2300024: Icosphere.005
+    2300026: Icosphere.006
+    2300028: Icosphere.007
+    2300030: Plane
+    2300032: Plane.001
+    2300034: Plane.002
+    2300036: Plane.003
+    2300038: Plane.004
+    2300040: Plane.005
+    2300042: Plane.006
+    2300044: Plane.007
+    2300046: Plane.008
+    2300048: Plane.009
+    3300000: Cube
+    3300002: Cube.001
+    3300004: Cube.002
+    3300006: Cube.003
+    3300008: Cube.004
+    3300010: Cube.005
+    3300012: Cube.006
+    3300014: Icosphere
+    3300016: Icosphere.001
+    3300018: Icosphere.002
+    3300020: Icosphere.003
+    3300022: Icosphere.004
+    3300024: Icosphere.005
+    3300026: Icosphere.006
+    3300028: Icosphere.007
+    3300030: Plane
+    3300032: Plane.001
+    3300034: Plane.002
+    3300036: Plane.003
+    3300038: Plane.004
+    3300040: Plane.005
+    3300042: Plane.006
+    3300044: Plane.007
+    3300046: Plane.008
+    3300048: Plane.009
+    4300000: Icosphere
+    4300002: Plane
+    4300004: Cube
+    4300006: Plane.001
+    4300008: Cube.001
+    4300010: Cube.002
+    4300012: Cube.003
+    4300014: Cube.004
+    4300016: Cube.005
+    4300018: Cube.006
+    4300020: Plane.002
+    4300022: Plane.003
+    4300024: Plane.004
+    4300026: Plane.005
+    4300028: Plane.006
+    4300030: Plane.007
+    4300032: Plane.008
+    4300034: Plane.009
+    4300036: Icosphere.001
+    4300038: Icosphere.002
+    4300040: Icosphere.003
+    4300042: Icosphere.004
+    4300044: Icosphere.005
+    4300046: Icosphere.006
+    4300048: Icosphere.007
+    10800000: Sun
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Ground
+    second: {fileID: 2100000, guid: 2a6d9fec05b162a48ab528805f55634a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.003
+    second: {fileID: 2100000, guid: 4b268db3bd2f6484f934fe669cfe1ee3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.005
+    second: {fileID: 2100000, guid: 4ed838fe17fbfe443835f56a420f07d0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.006
+    second: {fileID: 2100000, guid: bc2f5076a02b18a4286a46a629637bd5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.007
+    second: {fileID: 2100000, guid: 397e616b7b87f7c4f84a17d636dc4314, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.008
+    second: {fileID: 2100000, guid: 8671c038041a9df4188d8ecc24d0a27f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.009
+    second: {fileID: 2100000, guid: f5ac3c7f92825a44ab1708addd3a7271, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: No Name
+    second: {fileID: 2100000, guid: c8257af3c073e214da04e82c3d111aa4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: water
+    second: {fileID: 2100000, guid: 25e06fc2d098a704e81bfe1534f5fbfa, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 0
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
