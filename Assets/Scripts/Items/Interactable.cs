@@ -14,7 +14,10 @@ public class Interactable : MonoBehaviour
     public virtual void Interact() // actual method for interacting
     {
         //this method is meant to be overwritten
-        Debug.Log("interacting with " + transform.name);
+        if (!hasInteracted){
+            Debug.Log("interacting with " + transform.name);
+        }
+        
     }
     private void Update()
     {
