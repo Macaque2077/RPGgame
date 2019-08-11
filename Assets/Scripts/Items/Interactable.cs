@@ -14,11 +14,12 @@ public class Interactable : MonoBehaviour
     public virtual void Interact() // actual method for interacting
     {
         //this method is meant to be overwritten
+        //added if statement so it does not constantly write in the console
         if (!hasInteracted){
             Debug.Log("interacting with " + transform.name);
         }
-        
     }
+    //check whether the player has already interacted if not checks the players distance from the object
     private void Update()
     {
         if (isFocus && !hasInteracted)

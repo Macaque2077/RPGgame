@@ -1,5 +1,4 @@
-﻿
-using System;
+﻿using UnityEngine.EventSystems;
 using UnityEngine;
 
 [RequireComponent(typeof(PlayerMotor))]
@@ -24,6 +23,12 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //making sure player doesnt move when user clicks inventory
+        if (EventSystem.current.IsPointerOverGameObject())
+            return;
+
+
+        //If left mouse button is pressed
         if (Input.GetMouseButtonDown(0))
         {
             Ray ray = cam.ScreenPointToRay(Input.mousePosition);
@@ -39,6 +44,7 @@ public class PlayerController : MonoBehaviour
             }
         }
 
+        //right mouse click for interacting with objects
         if (Input.GetMouseButtonDown(1))
         {
             Ray ray = cam.ScreenPointToRay(Input.mousePosition);

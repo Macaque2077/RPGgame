@@ -8,4 +8,11 @@ public class Item : ScriptableObject
     public Sprite icon = null;
     public bool isDefaultItem = false;
 
+    //by marking as virtual we can derive different objects from the Item and decide what we wish to happen to each kind of item
+    public virtual void Use()
+    {
+        //use item
+        Debug.Log("item used");
+    }
+
 }

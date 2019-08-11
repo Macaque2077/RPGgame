@@ -24,7 +24,7 @@ public class Inventory : MonoBehaviour
     public OnItemChanged onItemChangedCallback;
 
     
-    public int space = 20;//variabel for the size of inventory
+    public int space = 20;//variable for the size of inventory
 
     public List<Item> items = new List<Item>();
 
