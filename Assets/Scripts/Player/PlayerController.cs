@@ -44,7 +44,7 @@ public class PlayerController : MonoBehaviour
             }
         }
 
-        //right mouse click for interacting with objects
+        //right mouse click for interacting with objects   
         if (Input.GetMouseButtonDown(1))
         {
             Ray ray = cam.ScreenPointToRay(Input.mousePosition);

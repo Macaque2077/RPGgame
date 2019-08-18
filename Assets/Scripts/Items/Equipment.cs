@@ -11,6 +11,15 @@ public class Equipment : Item
     public int damage;
     public int energy;
 
+    public override void Use()
+    {
+        base.Use();
+        // equip the item
+        EquipmentManager.instance.Equip(this);
+        //remove from inventory
+    }
+
 }
 
+//Creates the different types of equipment 
 public enum EquipmentSlot { Head, Chest, Legs, Weapon, Tech, feet}
