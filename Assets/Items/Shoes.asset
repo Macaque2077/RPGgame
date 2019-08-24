@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 790672c98dc501b42bd39020262f4e1c, type: 3}
+  m_Name: Shoes
+  m_EditorClassIdentifier: 
+  name: Shoes
+  icon: {fileID: 21300000, guid: 8587f8f306460ad4487604fb76a874dc, type: 3}
+  isDefaultItem: 1
+  equipSlot: 5
+  mesh: {fileID: 4476938134167912608, guid: 3b17f87ce2509524da547636b3204e06, type: 3}
+  armorModifier: 0
+  damage: 0
+  energy: 0
