@@ -30,7 +30,72 @@ ModelImporter:
   - first:
       74: -208584692517425218
     second: Helmet|Run
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ArmorEyes
+    second: {fileID: 2100000, guid: 86f8ea5b41623e64c887dddd5c87d199, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ArmorMain
+    second: {fileID: 2100000, guid: 66ad80b04154433428fba85d30394606, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ArmorMetal
+    second: {fileID: 2100000, guid: aafc06c14cc97b043a383ef0f070b5f3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ArmorMetalSilver
+    second: {fileID: 2100000, guid: 6fcc921900bce3a4192d97cdf7d36075, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MaskMatDefault
+    second: {fileID: 2100000, guid: d377b887440cc994197301788712f984, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MaskMatSecondary
+    second: {fileID: 2100000, guid: 0d07825292e94af488a4e4cc0c948fe2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MaskMatTertiary
+    second: {fileID: 2100000, guid: d923748c40ad58a478354a056a7747b4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: OutfitDefaultDarkRed
+    second: {fileID: 2100000, guid: 7c87bb4559289844cb5dbc5060dd8f04, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ShoeMatMain
+    second: {fileID: 2100000, guid: 999d8f0f3ae10f84f8da147d433f7ecb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ShoeMatSecondary
+    second: {fileID: 2100000, guid: 84680e13472cc874ea173317f2d7c85b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Skin
+    second: {fileID: 2100000, guid: c0edcd5aaa8059d42a304a5858c3639c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: TopHighlightRED
+    second: {fileID: 2100000, guid: 7479e7dc6999a5e4293c7102f52c5180, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: UnderArmor
+    second: {fileID: 2100000, guid: 66bc6bae84343f2419e7918eee525b52, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
