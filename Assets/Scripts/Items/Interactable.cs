@@ -33,6 +33,7 @@ public class Interactable : MonoBehaviour
         }
     }
 
+    //for when focused on an object
     public void onFocused (Transform playerTransform)
     {
         isFocus = true;
@@ -40,6 +41,7 @@ public class Interactable : MonoBehaviour
         hasInteracted = false;
     }
 
+    //for not focused
     public void onDefocused()
     {
         isFocus = false;

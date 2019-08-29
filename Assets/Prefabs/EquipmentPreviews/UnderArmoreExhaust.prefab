@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &2088139799286247874
+--- !u!1 &2660445081294719871
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,36 +8,37 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 5043262319294700469}
-  - component: {fileID: 2071915370948613437}
+  - component: {fileID: 4107921789320541347}
+  - component: {fileID: 6543560626177014374}
+  - component: {fileID: 4788670865197824906}
   m_Layer: 0
-  m_Name: Shoes
+  m_Name: UnderArmoreExhaust
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &5043262319294700469
+--- !u!4 &4107921789320541347
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2088139799286247874}
+  m_GameObject: {fileID: 2660445081294719871}
   m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
-  m_LocalPosition: {x: -0, y: 0, z: 0}
+  m_LocalPosition: {x: 8.841591, y: 5.7156954, z: 18.902323}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!137 &2071915370948613437
-SkinnedMeshRenderer:
+--- !u!23 &6543560626177014374
+MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2088139799286247874}
+  m_GameObject: {fileID: 2660445081294719871}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -48,8 +49,10 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: d377b887440cc994197301788712f984, type: 2}
-  - {fileID: 2100000, guid: 0d07825292e94af488a4e4cc0c948fe2, type: 2}
+  - {fileID: -143102319481636622, guid: ab17205d1069c2542a5706f363d30cb1, type: 3}
+  - {fileID: -6861548063979637364, guid: ab17205d1069c2542a5706f363d30cb1, type: 3}
+  - {fileID: -8862899805111008417, guid: ab17205d1069c2542a5706f363d30cb1, type: 3}
+  - {fileID: 4572374763463146738, guid: ab17205d1069c2542a5706f363d30cb1, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -70,48 +73,11 @@ SkinnedMeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  serializedVersion: 2
-  m_Quality: 0
-  m_UpdateWhenOffscreen: 0
-  m_SkinnedMotionVectors: 1
-  m_Mesh: {fileID: -278085929633702562, guid: ab17205d1069c2542a5706f363d30cb1, type: 3}
-  m_Bones:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  m_BlendShapeWeights: []
-  m_RootBone: {fileID: 0}
-  m_AABB:
-    m_Center: {x: -0.046726346, y: -0.72806674, z: 0.2080251}
-    m_Extent: {x: 0.25009322, y: 0.2451439, z: 0.6538927}
-  m_DirtyAABB: 0
+--- !u!33 &4788670865197824906
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2660445081294719871}
+  m_Mesh: {fileID: -4650090425379616207, guid: ab17205d1069c2542a5706f363d30cb1, type: 3}

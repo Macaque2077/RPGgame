@@ -14,9 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Trousers
   icon: {fileID: 21300000, guid: 81201d6471c29e048bb11f65252a2f4d, type: 3}
-  isDefaultItem: 0
+  isDefaultItem: 1
   equipSlot: 2
-  mesh: {fileID: 8803223378554406471, guid: 078239cb78ddca342baa0b4719588b65, type: 3}
+  mesh: {fileID: 8634940279173189901, guid: 078239cb78ddca342baa0b4719588b65, type: 3}
   armorModifier: 0
   damage: 0
   energy: 0
