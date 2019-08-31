@@ -18,8 +18,9 @@ public class EnemyController : MonoBehaviour
         //gets the player from the player manager and sets the target as such
         target = PlayerManager.instance.player.transform;
 
-
         agent = GetComponent<NavMeshAgent>();
+
+        agent.stoppingDistance = 2f;
     }
 
     // Update is called once per frame

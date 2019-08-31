@@ -4,6 +4,8 @@ using UnityEngine.UI;
 
 public class TextInput : MonoBehaviour
 {
+    //public GameObject textOutput;
+
     InputField input;
     InputField.SubmitEvent onSubmit;
     InputField.OnChangeEvent onChange;
@@ -21,11 +23,11 @@ public class TextInput : MonoBehaviour
 
     private void SubmitInput(string arg0)
     {
-        //not the final way of doing this
-        if (arg0 == "attack")
-        {
-
-        }
+        Debug.Log("text was " + arg0);
+        //CommandSorter sortText = new CommandSorter();
+        //set the output text to the result of the command sorter
+        output.text = CommandSorter.Parse(arg0);
+        input.text = "";
         Debug.Log("text was " + arg0);
     }
 
