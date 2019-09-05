@@ -46,7 +46,13 @@ public class Enemy : Interactable
             //passes this enemy to be attacked by player
             playerCombat.Attack(myStats);
         }
-        //showCombatUI.SetActive(false);
+        //else showCombatUI.SetActive(false);
+
+    }
+
+    public void stopCombatUI()
+    {
+        showCombatUI.gameObject.SetActive(false);
     }
 
 }

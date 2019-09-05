@@ -13,6 +13,7 @@ public class TextInput : MonoBehaviour
 
     void Start()
     {
+        //sets the input as the relevant input component in the GUI
         input = this.GetComponent<InputField>();
         onSubmit = new InputField.SubmitEvent();
         onSubmit.AddListener(SubmitInput);
@@ -21,14 +22,14 @@ public class TextInput : MonoBehaviour
 
     }
 
-    private void SubmitInput(string arg0)
+    private void SubmitInput(string inputText)
     {
-        Debug.Log("text was " + arg0);
+        Debug.Log("text was " + inputText);
         //CommandSorter sortText = new CommandSorter();
         //set the output text to the result of the command sorter
-        output.text = CommandSorter.Parse(arg0);
+        output.text = CommandSorter.Parse(inputText);
         input.text = "";
-        Debug.Log("text was " + arg0);
+        Debug.Log("text was " + inputText);
     }
 
     public void CheckInput(string input)

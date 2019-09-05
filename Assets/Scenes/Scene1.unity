@@ -190,9 +190,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: 'Placeholder
-
-'
+  m_Text: Enter attack or block
 --- !u!222 &34631624
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -444,7 +442,8 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
+  m_BoundingSphereOverride: {x: 3.0972774e+27, y: 2.7073535e+23, z: 1.775259e+28,
+    w: 1.1258673e+24}
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
@@ -2553,6 +2552,7 @@ MonoBehaviour:
     baseValue: 5
   armor:
     baseValue: 3
+  combatUI: {fileID: 1332641349}
 --- !u!1 &906423540 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100006, guid: 8af8c9808b26bbc4da5a589e48d9b95f,

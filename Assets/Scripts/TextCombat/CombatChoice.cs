@@ -24,6 +24,7 @@ public class CombatChoice : MonoBehaviour
         // enact the combat choice 
         switch (txtInput)
         {
+            
             case "attack":
                 target.attacked();
                 break;
@@ -32,6 +33,7 @@ public class CombatChoice : MonoBehaviour
                 break;
 
         }
+        //concatenates all combat text
         AllCombatText += "\n" + txtInput;
 
         Debug.Log(txtInput + "combat choice");

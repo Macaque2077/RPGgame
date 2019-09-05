@@ -12,6 +12,8 @@ public class CharacterStats : MonoBehaviour
     public Stat damage;
     public Stat armor;
 
+    //public Enemy Enemy = new Enemy();
+
     //sets health to equal max health at the start of the game
     void Awake()
     {
@@ -44,6 +46,9 @@ public class CharacterStats : MonoBehaviour
         if (currentHealth <= 0)
         {
             Die();
+
+            //Enemy.showCombatUI.SetActive(false);
+            //showCombatUI.SetActive(false);
         }
     }
 
