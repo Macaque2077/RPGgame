@@ -1,10 +1,9 @@
 ﻿using System;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class CommandSorter : MonoBehaviour
 {
-
+    //parse the input text
     public static string Parse(string prCommand)
     {
         prCommand = prCommand.ToLower();
@@ -12,6 +11,7 @@ public class CommandSorter : MonoBehaviour
         CommandMap validateChoice = new CommandMap();
         if (commandParts.Length >= 2)
         {
+            //prompt user to enter correct command
             return (CombatChoice.instance.AllCombatText += "\n" +  "please enter single word commands");
         }
 
@@ -21,7 +21,7 @@ public class CommandSorter : MonoBehaviour
             {
                 return (CombatChoice.instance.AllCombatText);
             }
-            //CombatChoice.instance.GoCombatChoice(prCommand);
+            //prompt user to enter correct command
             else return CombatChoice.instance.AllCombatText + "please enter a combat choice";
            
 

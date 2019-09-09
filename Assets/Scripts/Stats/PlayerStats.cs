@@ -27,4 +27,5 @@ public class PlayerStats : CharacterStats
             damage.RemoveModifier(OldItem.damage);
         }
     }
+
 }

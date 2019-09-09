@@ -1,11 +1,12 @@
-﻿using System.Collections;
+﻿
 using System.Collections.Generic;
-using UnityEngine;
+
 
 public class CommandMap 
 {
     private static HashSet<string> commands;
 
+    //holds a hash of the available commands
     public void CommandSet()
     {
         commands = new HashSet<string>();

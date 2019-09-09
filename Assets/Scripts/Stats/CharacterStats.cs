@@ -1,5 +1,9 @@
 ﻿using UnityEngine;
+using System;
+using System.Runtime.Serialization.Formatters.Binary;
+using System.IO;
 
+[Serializable]
 //part of a charecter defines their stats
 public class CharacterStats : MonoBehaviour
 {
@@ -23,11 +27,10 @@ public class CharacterStats : MonoBehaviour
 
     void Update()
     {
-        //test to check whether taking dmg works
-        //if (Input.GetKeyDown(KeyCode.T))
-        //{
-        //    TakeDamage(10);
-        //}
+        if (Input.GetKeyUp(KeyCode.U))
+        {
+            TakeDamage(50);
+        }
     }
 
     public void TakeDamage(int damage)
@@ -58,6 +61,25 @@ public class CharacterStats : MonoBehaviour
 
         //die
         Debug.Log(transform.name + "died.");
+
+    }
+
+    public void SavePlayer()
+    {
+        SaveLoadManager.saveGame(this);
+    }
+
+    public void LoadPlayer()
+    {
+        PlayerSaveData data = SaveLoadManager.Load();
+        currentHealth = data.health;
+
+/*        Vector3 position;
+        position.x = data.position[0];
+        position.y = data.position[1];
+        position.z = data.position[2];
+
+        transform.position = position;*/
 
     }
 
