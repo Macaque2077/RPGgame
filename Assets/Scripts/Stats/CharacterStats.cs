@@ -66,13 +66,31 @@ public class CharacterStats : MonoBehaviour
 
     public void SavePlayer()
     {
-        SaveLoadManager.saveGame(this);
+        //old save
+        //SaveLoadManager.saveGame(this);
+
+        //json save
+        
+        JSONsave save = new JSONsave();
+        save.SerializeTest(this);
     }
 
     public void LoadPlayer()
     {
-        PlayerSaveData data = SaveLoadManager.Load();
+        //old load
+        //PlayerSaveData data = SaveLoadManager.Load();
+
+        //JSON load
+        JSONsave save = new JSONsave();
+        PlayerSaveData data = save.DeSerializeTest();
+
         currentHealth = data.health;
+        //send items to inventory to be loaded
+        Inventory.instance.loadItems(data);
+
+        //send equipment ot be loaded onto character
+        //EquipmentManager.instance.LoadEquipment(data);
+
 
 /*        Vector3 position;
         position.x = data.position[0];

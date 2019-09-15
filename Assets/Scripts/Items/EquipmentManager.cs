@@ -53,6 +53,7 @@ public class EquipmentManager : MonoBehaviour
     //to equip new items
     public void Equip (Equipment newItem)
     {
+        Debug.Log("Equipping: " + newItem.name);
         //enums are associated with an index
         int slotIndex = (int)newItem.equipSlot;
 
@@ -120,6 +121,7 @@ public class EquipmentManager : MonoBehaviour
         }
     }
 
+    //for each item unequip it 
     public void UnequipAll()
     {
         for (int i = 0; i < currentEquipment.Length; i++)
@@ -133,6 +135,17 @@ public class EquipmentManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.U))
             UnequipAll();
+    }
+
+    public Equipment[] ReturnEquipmentList()
+    {
+        return currentEquipment;
+    }
+
+    //load equipment onto character
+    public void LoadEquipment(PlayerSaveData data)
+    {
+        currentEquipment = data.currentEquipment;
     }
 
 }

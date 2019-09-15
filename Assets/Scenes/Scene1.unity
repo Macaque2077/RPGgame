@@ -473,7 +473,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 2.7e-44, y: 0, z: 0, w: 6e-45}
+  m_BoundingSphereOverride: {x: 9, y: 7, z: -10, w: 7}
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
@@ -1984,6 +1984,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   space: 20
   items: []
+  allEquipment:
+  - {fileID: 11400000, guid: dd918af478b3cd84394fdb9e62c8fcb9, type: 2}
+  - {fileID: 11400000, guid: 7729e4b805432a040b9b7c1bf5216c96, type: 2}
+  - {fileID: 11400000, guid: 46266ea7bed189449aa8a865cfa24842, type: 2}
 --- !u!4 &522192953
 Transform:
   m_ObjectHideFlags: 0

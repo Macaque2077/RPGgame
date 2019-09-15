@@ -1,6 +1,6 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class Inventory : MonoBehaviour
 {
@@ -26,6 +26,7 @@ public class Inventory : MonoBehaviour
     
     public int space = 20;//variable for the size of inventory
 
+    [SerializeField]
     public List<Item> items = new List<Item>();
 
     public bool Add (Item item)
@@ -54,6 +55,26 @@ public class Inventory : MonoBehaviour
 
         if (onItemChangedCallback != null)
             onItemChangedCallback.Invoke();
+    }
+
+    //hold the values for loading the equipment
+    [SerializeField]
+    Equipment[] allEquipment;
+
+
+    public void loadItems(PlayerSaveData data)
+    {
+
+        SaveGameItem.SerializeTexture importObj = new SaveGameItem.SerializeTexture();
+        //items = data.wrappedList;
+        foreach (SaveGameEquipment item in data.wrappedList)
+        {
+
+            Equipment n_Item = ScriptableObject.CreateInstance<Equipment>();
+            n_Item = allEquipment[item.itemID];
+
+            Add(n_Item);
+        }
     }
 
 }
