@@ -44,39 +44,17 @@ public class SaveGameEquipment
 
     //for saving icon
     public int itemID;
+    public bool isEquipped;
 
 
-    public bool isDefaultItem;
 
-    public EquipmentSlot equipSlot;
-    public SkinnedMeshRenderer mesh;
-    public int armorModifier;
-    public int damage;
-    public int energy;
-
-    SerializeTexture exportObj = new SerializeTexture();
     
 
     public SaveGameEquipment(Equipment a_item)
     {
-        //get items sprite
-        /*        m_InSprite = a_item.icon;
-                //converting sprite to json readable format - MAKE ANOTHER METHOD TO DO ALL THIS---------------------------------------------------------------------------------------
-                Texture2D tex = m_InSprite.texture;
-                exportObj.x = tex.width;
-                exportObj.y = tex.height;
-                exportObj.bytes = ImageConversion.EncodeToPNG(tex);
-
-                iconID = a_item.iconID;
-                name = a_item.name;
-                equipSlot = a_item.equipSlot;
-                mesh = a_item.mesh;
-                armorModifier = a_item.armorModifier;
-                damage = a_item.damage;
-                energy = a_item.energy;
-                isDefaultItem = a_item.isDefaultItem;*/
-
+        Debug.Log("current item : " + a_item.name);
         itemID = a_item.itemID;
+        
 
     }
 

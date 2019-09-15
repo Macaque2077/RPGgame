@@ -13,7 +13,7 @@ public class EquipmentManager : MonoBehaviour
     #endregion
 
     //array of all the items we have equiped
-    Equipment[] currentEquipment;
+    public Equipment[] currentEquipment;
 
 
     //default item holder
@@ -145,7 +145,16 @@ public class EquipmentManager : MonoBehaviour
     //load equipment onto character
     public void LoadEquipment(PlayerSaveData data)
     {
-        currentEquipment = data.currentEquipment;
+        UnequipAll();
+        
+        foreach (SaveGameEquipment item in data.equippedList)
+        {
+
+            Equipment n_Item = ScriptableObject.CreateInstance<Equipment>();
+            n_Item = Inventory.instance.allEquipment[item.itemID];
+
+            Equip(n_Item);
+        }
     }
 
 }

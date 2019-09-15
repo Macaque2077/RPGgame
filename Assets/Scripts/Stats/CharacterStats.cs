@@ -66,9 +66,6 @@ public class CharacterStats : MonoBehaviour
 
     public void SavePlayer()
     {
-        //old save
-        //SaveLoadManager.saveGame(this);
-
         //json save
         
         JSONsave save = new JSONsave();
@@ -77,14 +74,15 @@ public class CharacterStats : MonoBehaviour
 
     public void LoadPlayer()
     {
-        //old load
-        //PlayerSaveData data = SaveLoadManager.Load();
 
         //JSON load
         JSONsave save = new JSONsave();
         PlayerSaveData data = save.DeSerializeTest();
 
         currentHealth = data.health;
+        //load equipped inventory, must be done first as removed equipment will be added to inventory to then be removed by loadItems
+        EquipmentManager.instance.LoadEquipment(data);
+
         //send items to inventory to be loaded
         Inventory.instance.loadItems(data);
 

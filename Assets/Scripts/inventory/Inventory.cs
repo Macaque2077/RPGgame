@@ -59,12 +59,12 @@ public class Inventory : MonoBehaviour
 
     //hold the values for loading the equipment
     [SerializeField]
-    Equipment[] allEquipment;
+    public Equipment[] allEquipment;
 
 
     public void loadItems(PlayerSaveData data)
     {
-
+        ClearInventory();
         SaveGameItem.SerializeTexture importObj = new SaveGameItem.SerializeTexture();
         //items = data.wrappedList;
         foreach (SaveGameEquipment item in data.wrappedList)
@@ -74,6 +74,15 @@ public class Inventory : MonoBehaviour
             n_Item = allEquipment[item.itemID];
 
             Add(n_Item);
+        }
+    }
+
+    public void ClearInventory()
+    { 
+        foreach (Equipment item in Inventory.instance.items)
+        {
+            Remove(item);
+
         }
     }
 

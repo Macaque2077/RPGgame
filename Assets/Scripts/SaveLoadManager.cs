@@ -54,19 +54,30 @@ public class PlayerSaveData
     public float[] position;
 
     public List<SaveGameEquipment> wrappedList = new List<SaveGameEquipment>();
-
-    public Equipment[] currentEquipment;
+    public List<SaveGameEquipment> equippedList = new List<SaveGameEquipment>();
+    //public Equipment[] currentEquipment;
     
 
-
+    //populates the save data to be saved 
     public PlayerSaveData(CharacterStats PlayerStats)
     {
         health = PlayerStats.currentHealth;
         foreach (Equipment item in Inventory.instance.items)
         {
+            //get the items in inventory
             wrappedList.Add(new SaveGameEquipment(item));
+            Debug.Log("inventory--------------");
+        }
+        foreach (Equipment item in EquipmentManager.instance.currentEquipment)
+        {
+            //get the eqipped items
+            if (item != null){
+                equippedList.Add(new SaveGameEquipment(item));
+                Debug.Log("equipped--------------");
+            }
             
         }
+
     }
 
 }

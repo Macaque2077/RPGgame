@@ -1988,6 +1988,10 @@ MonoBehaviour:
   - {fileID: 11400000, guid: dd918af478b3cd84394fdb9e62c8fcb9, type: 2}
   - {fileID: 11400000, guid: 7729e4b805432a040b9b7c1bf5216c96, type: 2}
   - {fileID: 11400000, guid: 46266ea7bed189449aa8a865cfa24842, type: 2}
+  - {fileID: 11400000, guid: 2952c5a147a8c2b41b54452c64ee1af6, type: 2}
+  - {fileID: 11400000, guid: f18426a914bf4174cb8f5fc8206f52dd, type: 2}
+  - {fileID: 11400000, guid: 604b751d4b8d059429b5fdb581c6eaa4, type: 2}
+  - {fileID: 11400000, guid: fce4b984f6a1c0a44abd60b3ef3a2203, type: 2}
 --- !u!4 &522192953
 Transform:
   m_ObjectHideFlags: 0
@@ -2015,6 +2019,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a147cb8708ee1b46b2a0e5f8d83f3d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentEquipment: []
   defaultItems:
   - {fileID: 11400000, guid: f18426a914bf4174cb8f5fc8206f52dd, type: 2}
   - {fileID: 11400000, guid: fce4b984f6a1c0a44abd60b3ef3a2203, type: 2}

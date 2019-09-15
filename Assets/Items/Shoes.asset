@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Shoes
   icon: {fileID: 21300000, guid: 8587f8f306460ad4487604fb76a874dc, type: 3}
+  itemID: 6
   isDefaultItem: 1
   equipSlot: 5
   mesh: {fileID: 2071915370948613437, guid: 3b17f87ce2509524da547636b3204e06, type: 3}
