@@ -166,31 +166,44 @@ public class EquipmentManager : MonoBehaviour
     public void LoadEquipment(Person data)
     {
         UnequipAll();
+        Debug.Log(data.inventoryList);
+        string[] loadedEquipList = data.equippedList.Split(' ');
+        Debug.Log("Equipment list--------------------------------- = " + loadedEquipList.Length);
 
-        foreach (SaveGameEquipment item in data.equippedList)
+
+        foreach (string item in loadedEquipList)
         {
+            if (item != ""){
+                Equipment n_Item = ScriptableObject.CreateInstance<Equipment>();
+                //converts item to an intand then adds the relevant item to the players equipment
+                n_Item = (Inventory.instance.allEquipment[int.Parse(item)]);
 
-            Equipment n_Item = ScriptableObject.CreateInstance<Equipment>();
-            n_Item = Inventory.instance.allEquipment[item.itemID];
+                Equip(n_Item);
+            }
 
-            Equip(n_Item);
         }
     }
+
     //Test for finding a new way to save for SQL, returns a populated  equipment list to be saved
-    public List<SaveGameEquipment> equippedList = new List<SaveGameEquipment>();
-    internal List<SaveGameEquipment> saveEquipmentList()
+    public List<UInt32> equippedList = new List<UInt32>();
+    internal string saveEquipmentList()
     {
+        string concatInvList = "";
         foreach (Equipment item in EquipmentManager.instance.currentEquipment)
         {
+            
             //get the eqipped items
             if (item != null)
             {
-                equippedList.Add(new SaveGameEquipment(item));
+                //equippedList.Add(new SaveGameEquipment(item).itemID);
+                //need a string to save with sql
+                concatInvList = (item.itemID + " " + concatInvList);
                 Debug.Log("equipped--------------");
             }
 
         }
-        return equippedList;
+        Debug.Log(concatInvList);
+        return concatInvList;
     }
 
 

@@ -43,7 +43,7 @@ public class SaveGameEquipment
     Sprite m_InSprite;
 
     //for saving icon
-    public int itemID;
+    public UInt32 itemID;
     public bool isEquipped;
 
 

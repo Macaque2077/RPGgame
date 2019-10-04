@@ -10,7 +10,7 @@ public class Item : ScriptableObject
     [SerializeField]
     public Sprite icon = null;
     //for loading the right texture
-    public int itemID;
+    public UInt32 itemID;
     public bool isDefaultItem = false;
 
     //by marking as virtual we can derive different objects from the Item and decide what we wish to happen to each kind of item
@@ -42,7 +42,7 @@ public class SaveGameItem
 
     SerializeTexture exportObj = new SerializeTexture();
 
-    int itemID;
+    UInt32 itemID;
 
     public SaveGameItem(Item a_item)
     {

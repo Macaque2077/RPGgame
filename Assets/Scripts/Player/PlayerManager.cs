@@ -18,7 +18,7 @@ public class PlayerManager : MonoBehaviour
     //public gameobject to drag the player into 
     public GameObject player;
 
-    private DataService Db = new DataService("ZUp.db");
+    private DataService Db = new DataService("existing.db");
     public DataService DB
     {
         get

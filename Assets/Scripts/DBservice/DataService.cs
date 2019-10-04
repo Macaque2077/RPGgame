@@ -141,35 +141,12 @@ public class DataService  {
                 name = "player",
                 health = 100,
                 inventoryList = Inventory.instance.saveInventoryList(),
-             equippedList = EquipmentManager.instance.saveEquipmentList()
+                equippedList = EquipmentManager.instance.saveEquipmentList()
              }
 
 
         }) ;
-/*			new Person{
-				Id = 1,
-				Name = "Tom",
-				Surname = "Perez",
-				Age = 56
-			},
-			new Person{
-				Id = 2,
-				Name = "Fred",
-				Surname = "Arthurson",
-				Age = 16
-			},
-			new Person{
-				Id = 3,
-				Name = "John",
-				Surname = "Doe",
-				Age = 25
-			},
-			new Person{
-				Id = 4,
-				Name = "Roberto",
-				Surname = "Huertas",
-				Age = 37
-			}*/
+
 		
 	}
 
@@ -182,7 +159,7 @@ public class DataService  {
     public IEnumerable<Person> GetPlayer()
     {
         Debug.Log("4.88888888");
-        return _connection.Table<Person>().Where(x => x.name == "player");
+        return _connection.Table<Person>().Where(x => x.id == 1);
     }
 
     /*	public IEnumerable<Person> GetPersonsNamedRoberto(){
@@ -192,15 +169,36 @@ public class DataService  {
         public Person GetJohnny(){
             return _connection.Table<Person>().Where(x => x.Name == "Johnny").FirstOrDefault();
         }*/
+    public Person OverwriteSave()
+    {
+        Debug.Log("6.1");
+        var p = new Person();
+        p.id = 1;
+        p.name = "player";
+        p.health = 100;
+        p.inventoryList = Inventory.instance.saveInventoryList();
+        p.equippedList = EquipmentManager.instance.saveEquipmentList();
+        Debug.Log("6");
+        _connection.InsertOrReplace(p);
+
+
+        return p;
+    }
 
     public Person CreatePerson(){
-        Debug.Log("4.1");
-        var p = new Person();
-        p.name = "player";
-        Debug.Log("4");
-        _connection.Insert (p);
-
         
+        var p = new Person();
+        p.id = 1;
+        p.name = "player";
+        p.health = 100;
+        p.inventoryList = Inventory.instance.saveInventoryList();
+        p.equippedList = EquipmentManager.instance.saveEquipmentList();
+        Debug.Log("4.0");
+        _connection.Insert(p);
+        Debug.Log("4.1");
+
+
+
         return p;
 	}
 }

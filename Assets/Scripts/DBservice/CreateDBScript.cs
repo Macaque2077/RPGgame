@@ -20,7 +20,7 @@ public class CreateDBScript : MonoBehaviour {
         ToConsole (people);
         //people = ds.GetPersonsNamedRoberto ();
         //ToConsole("Searching for Roberto ...");
-        ToConsole (people); 
+        Debug.Log("FECK----------------------");
     }
 	
 	private void ToConsole(IEnumerable<Person> people){

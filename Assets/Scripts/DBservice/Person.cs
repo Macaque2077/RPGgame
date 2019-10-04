@@ -1,5 +1,6 @@
 ﻿using SQLite4Unity3d;
 using System.Collections.Generic;
+using System;
 using UnityEngine;
 
 
@@ -10,8 +11,8 @@ public class Person  {
     public int id { get; set; }
     public string name { get; set; }
     public int health { get; set; }
-    public List<int> inventoryList { get; set; }
-    public List<int> equippedList { get; set; }
+    public string inventoryList { get; set; }
+    public string equippedList { get; set; }
 
 
     /*

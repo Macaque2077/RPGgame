@@ -473,7 +473,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 9, y: 7, z: -10, w: 7}
+  m_BoundingSphereOverride: {x: 0, y: 0.1484375, z: 0.03125, w: -0.0390625}
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
@@ -1963,6 +1963,7 @@ GameObject:
   - component: {fileID: 522192952}
   - component: {fileID: 522192954}
   - component: {fileID: 522192955}
+  - component: {fileID: 522192956}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -1992,6 +1993,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: f18426a914bf4174cb8f5fc8206f52dd, type: 2}
   - {fileID: 11400000, guid: 604b751d4b8d059429b5fdb581c6eaa4, type: 2}
   - {fileID: 11400000, guid: fce4b984f6a1c0a44abd60b3ef3a2203, type: 2}
+  inventoryList: 
 --- !u!4 &522192953
 Transform:
   m_ObjectHideFlags: 0
@@ -2026,6 +2028,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 604b751d4b8d059429b5fdb581c6eaa4, type: 2}
   - {fileID: 11400000, guid: 2952c5a147a8c2b41b54452c64ee1af6, type: 2}
   targetMesh: {fileID: 8142844972252029350}
+  equippedList: 
 --- !u!114 &522192955
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2039,6 +2042,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 343305607}
+--- !u!114 &522192956
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 522192951}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c1e69eab5f438645ab48a0fb394fe7f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &528978969
 PrefabInstance:
   m_ObjectHideFlags: 0

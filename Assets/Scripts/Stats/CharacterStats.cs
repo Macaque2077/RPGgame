@@ -74,8 +74,8 @@ public class CharacterStats : MonoBehaviour
 
         //db Save
         var ds = new DataService("existing.db");
-        Debug.Log("1");
-        ds.CreatePerson();
+        //Debug.Log("1");
+        //ds.CreatePerson();
         Debug.Log("2");
         ExistingDBScript save = new ExistingDBScript();
         Debug.Log("3");

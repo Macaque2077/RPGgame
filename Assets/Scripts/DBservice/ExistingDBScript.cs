@@ -7,24 +7,6 @@ public class ExistingDBScript : MonoBehaviour {
 	public Text DebugText;
 
 	// Use this for initialization
-	void Start () {
-        Debug.Log("5.1");
-        var ds = new DataService ("existing.db");
-        Debug.Log("5.2");
-        //ds.CreateDB ();
-        var people = ds.GetPersons ();
-		ToConsole (people);
-
-		//people = ds.GetPersonsNamedRoberto ();
-		//ToConsole("Searching for Roberto ...");
-		//ToConsole (people);
-
-		ds.CreatePerson ();
-		ToConsole("New person has been created");
-		//var p = ds.GetJohnny ();
-		//ToConsole(p.ToString());
-
-	}
     public void DBDOME()
     {
         Debug.Log("5.1");
@@ -38,11 +20,26 @@ public class ExistingDBScript : MonoBehaviour {
         //ToConsole("Searching for Roberto ...");
         //ToConsole(people);
 
-        ds.CreatePerson();
-        ToConsole("New person has been created");
+        //to overwrite the current players save 
+        var p = ds.OverwriteSave();
+        ToConsole(p.ToString());
+
+        //create a new player save ---------
+        //ds.CreatePerson();
+        //ToConsole("New person has been created");
+
         //var p = ds.GetJohnny ();
         //ToConsole(p.ToString());
 
+    }
+
+    //to create a new save 
+    public void newSave()
+    {
+        var ds = new DataService("existing.db");
+        //create a new player save ---------
+        ds.CreatePerson();
+        ToConsole("New person has been created");
     }
 
     private void ToConsole(IEnumerable<Person> people){
@@ -52,7 +49,7 @@ public class ExistingDBScript : MonoBehaviour {
 	}
 
 	private void ToConsole(string msg){
-		DebugText.text += System.Environment.NewLine + msg;
+        Debug.Log(System.Environment.NewLine + msg);
 		Debug.Log (msg);
 	}
 

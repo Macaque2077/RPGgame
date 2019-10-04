@@ -29,8 +29,7 @@ public class Inventory : MonoBehaviour
     [SerializeField]
     public List<Item> items = new List<Item>();
 
-    //for saving the inventory in sequal used by saveInventoryList
-    public List<SaveGameEquipment> inventoryList = new List<SaveGameEquipment>();
+
     public bool Add (Item item)
     {
         if (!item.isDefaultItem)
@@ -84,27 +83,39 @@ public class Inventory : MonoBehaviour
     {
         ClearInventory();
         SaveGameItem.SerializeTexture importObj = new SaveGameItem.SerializeTexture();
-        //items = data.wrappedList;
-        foreach (SaveGameEquipment item in data.inventoryList)
+
+        string[] loadedItemList = data.inventoryList.Split(' ');
+        Debug.Log("Equipment list--------------------------------- = " + loadedItemList);
+
+
+        foreach (string item in loadedItemList)
         {
+            if (item != "")
+            {
+                Equipment n_Item = ScriptableObject.CreateInstance<Equipment>();
+                n_Item = allEquipment[int.Parse(item)];
 
-            Equipment n_Item = ScriptableObject.CreateInstance<Equipment>();
-            n_Item = allEquipment[item.itemID];
-
-            Add(n_Item);
+                Add(n_Item);
+            }
         }
     }
 
     //Test for finding a new way to save for SQL, returns a populated  inventor list to be saved
-    public List<SaveGameEquipment> saveInventoryList()
+    //for saving the inventory in sequal used by saveInventoryList
+    public List<UInt32> inventoryList = new List<UInt32>();
+    public string saveInventoryList()
     {
+        string concatInvList = "";
         foreach (Equipment item in Inventory.instance.items)
         {
             //get the items in inventory
-            inventoryList.Add(new SaveGameEquipment(item));
+            //inventoryList.Add(new SaveGameEquipment(item).itemID);
+
+            concatInvList = (item.itemID + " " + concatInvList);
             Debug.Log("inventory--------------");
         }
-        return inventoryList;
+        Debug.Log(concatInvList);
+        return concatInvList;
     }
 
     public void ClearInventory()

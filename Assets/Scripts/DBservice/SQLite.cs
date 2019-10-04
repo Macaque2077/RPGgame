@@ -236,7 +236,7 @@ namespace SQLite4Unity3d
 			var databasePathAsBytes = GetNullTerminatedUtf8 (DatabasePath);
 			var r = SQLite3.Open (databasePathAsBytes, out handle, (int) openFlags, IntPtr.Zero);
 #endif
-            UnityEngine.Debug.Log(DatabasePath + "path");
+            UnityEngine.Debug.Log(DatabasePath + "-------path");
 			Handle = handle;
 			if (r != SQLite3.Result.OK) {
 				throw SQLiteException.New (r, String.Format ("Could not open database file: {0} ({1})", DatabasePath, r));
