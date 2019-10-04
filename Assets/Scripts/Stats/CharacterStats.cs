@@ -2,6 +2,7 @@
 using System;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.IO;
+using System.Linq;
 
 [Serializable]
 //part of a charecter defines their stats
@@ -67,24 +68,43 @@ public class CharacterStats : MonoBehaviour
     public void SavePlayer()
     {
         //json save
-        
-        JSONsave save = new JSONsave();
-        save.SerializeTest(this);
+
+        /*        JSONsave save = new JSONsave();
+                save.SerializeTest(this);*/
+
+        //db Save
+        var ds = new DataService("existing.db");
+        Debug.Log("1");
+        ds.CreatePerson();
+        Debug.Log("2");
+        ExistingDBScript save = new ExistingDBScript();
+        Debug.Log("3");
+        save.DBDOME();
+        Debug.Log("4");
     }
 
     public void LoadPlayer()
     {
 
         //JSON load
-        JSONsave save = new JSONsave();
-        PlayerSaveData data = save.DeSerializeTest();
+        //JSONsave save = new JSONsave();
+        //PlayerSaveData data = save.DeSerializeTest();
 
-        currentHealth = data.health;
+        //DB Load
+        var ds = new DataService("existing.db");
+        //Person people = ds.GetPersons().First();
+        Person people = ds.GetPlayer().First();
+
+        currentHealth = people.health;
         //load equipped inventory, must be done first as removed equipment will be added to inventory to then be removed by loadItems
-        EquipmentManager.instance.LoadEquipment(data);
+        EquipmentManager.instance.LoadEquipment(people);
 
         //send items to inventory to be loaded
-        Inventory.instance.loadItems(data);
+        Inventory.instance.loadItems(people);
+
+
+        //DB load
+
 
         //send equipment ot be loaded onto character
         //EquipmentManager.instance.LoadEquipment(data);

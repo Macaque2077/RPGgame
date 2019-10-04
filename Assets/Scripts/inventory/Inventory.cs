@@ -29,6 +29,8 @@ public class Inventory : MonoBehaviour
     [SerializeField]
     public List<Item> items = new List<Item>();
 
+    //for saving the inventory in sequal used by saveInventoryList
+    public List<SaveGameEquipment> inventoryList = new List<SaveGameEquipment>();
     public bool Add (Item item)
     {
         if (!item.isDefaultItem)
@@ -62,12 +64,28 @@ public class Inventory : MonoBehaviour
     public Equipment[] allEquipment;
 
 
-    public void loadItems(PlayerSaveData data)
+    /*    public void loadItems(PlayerSaveData data)
+        {
+            ClearInventory();
+            SaveGameItem.SerializeTexture importObj = new SaveGameItem.SerializeTexture();
+            //items = data.wrappedList;
+            foreach (SaveGameEquipment item in data.wrappedList)
+            {
+
+                Equipment n_Item = ScriptableObject.CreateInstance<Equipment>();
+                n_Item = allEquipment[item.itemID];
+
+                Add(n_Item);
+            }
+        }*/
+
+    //DB Load ------------------------------------------------------------------------------------------------
+    public void loadItems(Person data)
     {
         ClearInventory();
         SaveGameItem.SerializeTexture importObj = new SaveGameItem.SerializeTexture();
         //items = data.wrappedList;
-        foreach (SaveGameEquipment item in data.wrappedList)
+        foreach (SaveGameEquipment item in data.inventoryList)
         {
 
             Equipment n_Item = ScriptableObject.CreateInstance<Equipment>();
@@ -75,6 +93,18 @@ public class Inventory : MonoBehaviour
 
             Add(n_Item);
         }
+    }
+
+    //Test for finding a new way to save for SQL, returns a populated  inventor list to be saved
+    public List<SaveGameEquipment> saveInventoryList()
+    {
+        foreach (Equipment item in Inventory.instance.items)
+        {
+            //get the items in inventory
+            inventoryList.Add(new SaveGameEquipment(item));
+            Debug.Log("inventory--------------");
+        }
+        return inventoryList;
     }
 
     public void ClearInventory()

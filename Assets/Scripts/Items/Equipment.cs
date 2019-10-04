@@ -58,14 +58,5 @@ public class SaveGameEquipment
 
     }
 
-    public class SerializeTexture
-    {
-        [SerializeField]
-        public int x;
-        [SerializeField]
-        public int y;
-        [SerializeField]
-        public byte[] bytes;
-    }
 
 }

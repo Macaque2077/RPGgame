@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using System;
+using System.Collections.Generic;
+using UnityEngine;
 
 //for the equipment worn by the character
 public class EquipmentManager : MonoBehaviour
@@ -51,7 +53,7 @@ public class EquipmentManager : MonoBehaviour
     }
 
     //to equip new items
-    public void Equip (Equipment newItem)
+    public void Equip(Equipment newItem)
     {
         Debug.Log("Equipping: " + newItem.name);
         //enums are associated with an index
@@ -112,6 +114,10 @@ public class EquipmentManager : MonoBehaviour
         return null;
     }
 
+
+
+
+
     //for each item in default items equip it
     void EquipDefaultItems()
     {
@@ -143,10 +149,24 @@ public class EquipmentManager : MonoBehaviour
     }
 
     //load equipment onto character
-    public void LoadEquipment(PlayerSaveData data)
+    /*    public void LoadEquipment(PlayerSaveData data)
+        {
+            UnequipAll();
+
+            foreach (SaveGameEquipment item in data.equippedList)
+            {
+
+                Equipment n_Item = ScriptableObject.CreateInstance<Equipment>();
+                n_Item = Inventory.instance.allEquipment[item.itemID];
+
+                Equip(n_Item);
+            }
+        }*/
+    //load from DB -----------------------------------------------------------------------------------------------------------------------
+    public void LoadEquipment(Person data)
     {
         UnequipAll();
-        
+
         foreach (SaveGameEquipment item in data.equippedList)
         {
 
@@ -156,5 +176,22 @@ public class EquipmentManager : MonoBehaviour
             Equip(n_Item);
         }
     }
+    //Test for finding a new way to save for SQL, returns a populated  equipment list to be saved
+    public List<SaveGameEquipment> equippedList = new List<SaveGameEquipment>();
+    internal List<SaveGameEquipment> saveEquipmentList()
+    {
+        foreach (Equipment item in EquipmentManager.instance.currentEquipment)
+        {
+            //get the eqipped items
+            if (item != null)
+            {
+                equippedList.Add(new SaveGameEquipment(item));
+                Debug.Log("equipped--------------");
+            }
+
+        }
+        return equippedList;
+    }
+
 
 }
