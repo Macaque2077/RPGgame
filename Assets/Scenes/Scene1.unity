@@ -399,7 +399,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3275c3c9b9036184cbb78bf3015e02a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  output: {fileID: 34631623}
+  output: {fileID: 0}
 --- !u!1 &170076733
 GameObject:
   m_ObjectHideFlags: 0
@@ -473,7 +473,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 0, y: 0.1484375, z: 0.03125, w: -0.0390625}
+  m_BoundingSphereOverride: {x: 0, y: 1.435e-42, z: 6.77616e-21, w: 0}
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
@@ -1372,7 +1372,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   movementMask:
     serializedVersion: 2
-    m_Bits: 512
+    m_Bits: 4294967295
   focus: {fileID: 0}
 --- !u!54 &343305609
 Rigidbody:
@@ -1479,7 +1479,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 100
   damage:
-    baseValue: 10
+    baseValue: 0
   armor:
     baseValue: 0
 --- !u!114 &343305616
@@ -1914,9 +1914,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b9ab1336e73a014d8a11215c236d0d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  radius: 0.5
-  interactionTransform: {fileID: 457481673}
-  item: {fileID: 11400000, guid: dd918af478b3cd84394fdb9e62c8fcb9, type: 2}
+  radius: 3
+  interactionTransform: {fileID: 0}
+  item: {fileID: 0}
 --- !u!65 &457481670
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1985,14 +1985,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   space: 20
   items: []
-  allEquipment:
-  - {fileID: 11400000, guid: dd918af478b3cd84394fdb9e62c8fcb9, type: 2}
-  - {fileID: 11400000, guid: 7729e4b805432a040b9b7c1bf5216c96, type: 2}
-  - {fileID: 11400000, guid: 46266ea7bed189449aa8a865cfa24842, type: 2}
-  - {fileID: 11400000, guid: 2952c5a147a8c2b41b54452c64ee1af6, type: 2}
-  - {fileID: 11400000, guid: f18426a914bf4174cb8f5fc8206f52dd, type: 2}
-  - {fileID: 11400000, guid: 604b751d4b8d059429b5fdb581c6eaa4, type: 2}
-  - {fileID: 11400000, guid: fce4b984f6a1c0a44abd60b3ef3a2203, type: 2}
+  allEquipment: []
   inventoryList: 
 --- !u!4 &522192953
 Transform:
@@ -2022,12 +2015,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentEquipment: []
-  defaultItems:
-  - {fileID: 11400000, guid: f18426a914bf4174cb8f5fc8206f52dd, type: 2}
-  - {fileID: 11400000, guid: fce4b984f6a1c0a44abd60b3ef3a2203, type: 2}
-  - {fileID: 11400000, guid: 604b751d4b8d059429b5fdb581c6eaa4, type: 2}
-  - {fileID: 11400000, guid: 2952c5a147a8c2b41b54452c64ee1af6, type: 2}
-  targetMesh: {fileID: 8142844972252029350}
+  defaultItems: []
+  targetMesh: {fileID: 0}
   equippedList: 
 --- !u!114 &522192955
 MonoBehaviour:
@@ -2262,13 +2251,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 534669902}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 18.59, y: 5.353, z: 16.089}
+  m_LocalRotation: {x: 0, y: 0, z: 0.9659258, w: 0.2588191}
+  m_LocalPosition: {x: 9.93, y: 7.14, z: 14.55}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 150}
 --- !u!136 &534669906
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -2296,7 +2285,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 343305612}
-  offset: {x: 0, y: -1, z: 0.8}
+  offset: {x: 0.5, y: 1, z: 0}
   zoomSpeed: 4
   minZoom: 5
   maxZoom: 15
@@ -2409,9 +2398,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b9ab1336e73a014d8a11215c236d0d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  radius: 1
-  interactionTransform: {fileID: 584158119}
-  item: {fileID: 11400000, guid: 46266ea7bed189449aa8a865cfa24842, type: 2}
+  radius: 3
+  interactionTransform: {fileID: 0}
+  item: {fileID: 0}
 --- !u!65 &584158116
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2719,9 +2708,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 052bb28a0e000d147a87530ecc9ec17a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  radius: 4
+  radius: 3
   interactionTransform: {fileID: 781174160}
-  showCombatUI: {fileID: 1332641349}
+  showCombatUI: {fileID: 0}
 --- !u!114 &781174162
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2734,11 +2723,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 948487f3ae4769d4f9c4799bab67109c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 40
+  maxHealth: 100
   damage:
-    baseValue: 5
+    baseValue: 0
   armor:
-    baseValue: 3
+    baseValue: 0
   combatUI: {fileID: 1332641349}
 --- !u!1 &906423540 stripped
 GameObject:
@@ -3303,8 +3292,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6aadf8c944d58d444a5f8cf7c1c029f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemsParent: {fileID: 1154326650}
-  inventoryUI: {fileID: 327814619}
+  itemsParent: {fileID: 0}
+  inventoryUI: {fileID: 0}
 --- !u!224 &1069599576 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 4511466308368203023, guid: f1fdf8febb5a9b44aa696fe753df52cf,
@@ -4644,9 +4633,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b9ab1336e73a014d8a11215c236d0d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  radius: 1
-  interactionTransform: {fileID: 1468925892}
-  item: {fileID: 11400000, guid: 7729e4b805432a040b9b7c1bf5216c96, type: 2}
+  radius: 3
+  interactionTransform: {fileID: 0}
+  item: {fileID: 0}
 --- !u!65 &1468925889
 BoxCollider:
   m_ObjectHideFlags: 0

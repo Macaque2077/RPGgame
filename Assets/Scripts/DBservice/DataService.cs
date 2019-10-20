@@ -162,6 +162,12 @@ public class DataService  {
         return _connection.Table<Person>().Where(x => x.id == 1);
     }
 
+    public IEnumerable<Person> GetLogin(string loginName)
+    {
+        Debug.Log("trying to sign in");
+        return _connection.Table<Person>().Where(x => x.name == loginName);
+    }
+
     /*	public IEnumerable<Person> GetPersonsNamedRoberto(){
             return _connection.Table<Person>().Where(x => x.Name == "Roberto");
         }
