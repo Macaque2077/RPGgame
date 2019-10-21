@@ -11,9 +11,9 @@ using System.Collections.Generic;
 
 public class DataService  {
 
-	private SQLiteConnection _connection;
+	private static SQLiteConnection _connection;
 
-    public SQLiteConnection Connection
+    public static SQLiteConnection Connection
     {
         get
         {
@@ -139,16 +139,13 @@ public class DataService  {
             new Person{
                 id = 1,
                 name = "player",
+                password = "player",
                 health = 100,
                 inventoryList = Inventory.instance.saveInventoryList(),
                 equippedList = EquipmentManager.instance.saveEquipmentList()
              }
-
-
         }) ;
-
-		
-	}
+    }
 
 
 
@@ -183,6 +180,43 @@ public class DataService  {
 
 
         return p;
+    }
+
+    internal static bool CheckUserDuplicate(string prUsername)
+    {
+        try
+        {
+            List<Person> userDetailList = _connection.Table<Person>().ToList();
+            if (userDetailList.Count == 0)
+                return false;
+            else
+                return (userDetailList.Where(x => x.name == prUsername).ToList().Count != 0);
+        }
+        catch (SQLiteException exception)
+        {
+            Debug.Log("SQLite error checking for user when loging in" + exception);
+            return true;
+        }
+    }
+
+    internal static Person CheckLoginExists(string prUsername, string prPassword)
+    {
+        try
+        {
+            List<Person> userDetailList = _connection.Table<Person>().ToList();
+            Person currentPlayer;
+            if (userDetailList.Where(x => x.name == prUsername && x.password == prPassword).ToList().Count != 0)
+            {
+                currentPlayer = userDetailList.FirstOrDefault();
+                return currentPlayer;
+            }
+            else return null;
+        }
+        catch (SQLiteException exception)
+        {
+            Debug.Log("SQLite error checking for user when loging in" + exception);
+            return null;
+        }
     }
 
     public Person CreatePerson(){
