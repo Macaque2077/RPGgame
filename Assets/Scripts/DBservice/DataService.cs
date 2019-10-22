@@ -199,6 +199,7 @@ public class DataService  {
         }
     }
 
+    //used to find and return the users login details from the DB
     internal static Person CheckLoginExists(string prUsername, string prPassword)
     {
         try

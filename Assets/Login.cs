@@ -31,14 +31,13 @@ public class Login : MonoBehaviour
         string username = inputName.text;
         string password = inputPassword.text;
 
+        //check check db with the username
+        //check if password is right 
         Person currentplayer = DataService.CheckLoginExists(username, password);
 
-        //check check db with the username
-
-        //check if password is right 
-
         //load the game scene
-        Person currentPlayer = new Person();
+        
+        //pass the current player to be loaded 
         /* Person playerLogin = DataService.GetLogin(username);*/
     }
 }

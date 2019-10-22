@@ -119,4 +119,14 @@ public class CharacterStats : MonoBehaviour
 
     }
 
+    public void loadPostLogin (Person prCurrentPlayer)
+    {
+        currentHealth = prCurrentPlayer.health;
+        //load equipped inventory, must be done first as removed equipment will be added to inventory to then be removed by loadItems
+        EquipmentManager.instance.LoadEquipment(prCurrentPlayer);
+
+        //send items to inventory to be loaded
+        Inventory.instance.loadItems(prCurrentPlayer);
+    }
+
 }
