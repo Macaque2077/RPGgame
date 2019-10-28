@@ -21,9 +21,9 @@ public class ExistingDBScript : MonoBehaviour {
         //ToConsole(people);
 
         //to overwrite the current players save 
-        var p = ds.OverwriteSave();
-        ToConsole(p.ToString());
-
+        //var p = ds.OverwriteSave();
+        //ToConsole(p.ToString());
+        ds.OverwriteSave();
         //create a new player save ---------
         //ds.CreatePerson();
         //ToConsole("New person has been created");

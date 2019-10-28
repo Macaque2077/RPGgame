@@ -10,7 +10,7 @@ public class CharacterStats : MonoBehaviour
 {
     public int maxHealth = 100;
 
-    public int score = 0;
+    
 
     //any class can get this value but it can only be set from within this class
     public int currentHealth { get; set; }

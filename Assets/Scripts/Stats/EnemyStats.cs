@@ -18,5 +18,7 @@ public class EnemyStats : CharacterStats
 
         //destroys enemy game object
         Destroy(gameObject);
+
+        GameModel.currentPlayer.score += 10;
     }
 }

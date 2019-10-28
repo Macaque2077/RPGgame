@@ -164,20 +164,20 @@ public class DataService  {
         public Person GetJohnny(){
             return _connection.Table<Person>().Where(x => x.Name == "Johnny").FirstOrDefault();
         }*/
-    public Person OverwriteSave()
+    public void OverwriteSave()
     {
-        Debug.Log("6.1");
+/*        Debug.Log("6.1");
         var p = new Person();
         p.id = 1;
         p.name = "player";
         p.health = 100;
         p.inventoryList = Inventory.instance.saveInventoryList();
         p.equippedList = EquipmentManager.instance.saveEquipmentList();
-        Debug.Log("6");
-        _connection.InsertOrReplace(p);
+        Debug.Log("6");*/
+        _connection.InsertOrReplace(GameModel.currentPlayer);
 
 
-        return p;
+        
     }
 
     internal static bool CheckUserDuplicate(string prUsername)
