@@ -1,6 +1,4 @@
 ﻿using UnityEngine;
-using System.Linq;
-using System;
 
 //to keep track of player for enemy ai
 public class PlayerManager : MonoBehaviour
@@ -25,6 +23,17 @@ public class PlayerManager : MonoBehaviour
         {
             return Db;
         }
+    }
+
+    public void loadPlayerSave(Person prCurrentPlayer)
+    {
+        PlayerStats.instance.currentHealth = prCurrentPlayer.health;
+
+        //load equipped inventory, must be done first as removed equipment will be added to inventory to then be removed by loadItems
+        EquipmentManager.instance.LoadEquipment(prCurrentPlayer);
+
+        //send items to inventory to be loaded
+        Inventory.instance.loadItems(prCurrentPlayer);
     }
 
     public void PlayerSaveManager()
@@ -58,4 +67,6 @@ public class PlayerManager : MonoBehaviour
             equippedList = null
         }) ;
     }
+
+
 }

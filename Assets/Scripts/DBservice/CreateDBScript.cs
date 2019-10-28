@@ -13,7 +13,7 @@ public class CreateDBScript : MonoBehaviour {
 
     private void StartSync()
     {
-        var ds = new DataService("tempDatabase.db");
+        var ds = new DataService("existing.db");
         ds.CreateDB();
         
         var people = ds.GetPersons ();

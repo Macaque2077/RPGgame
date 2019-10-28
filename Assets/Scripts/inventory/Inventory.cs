@@ -19,18 +19,18 @@ public class Inventory : MonoBehaviour
 
     #endregion
 
-    // using a delegate which subcribes items to be called when the delgate is, useful for the UI
+    // using a delegate which subcribes items to be called when the delegate is, useful for the UI
     public delegate void OnItemChanged();
     public OnItemChanged onItemChangedCallback;
 
-    
+
     public int space = 20;//variable for the size of inventory
 
     [SerializeField]
     public List<Item> items = new List<Item>();
 
 
-    public bool Add (Item item)
+    public bool Add(Item item)
     {
         if (!item.isDefaultItem)
         {
@@ -44,13 +44,17 @@ public class Inventory : MonoBehaviour
 
             //to trigger everytime something changes in the inventory, updates the UI
             if (onItemChangedCallback != null)
+            {
+                Debug.Log("item changed updating UI" + onItemChangedCallback);
                 onItemChangedCallback.Invoke();
+            }
+
         }
 
         return true;
     }
 
-    public void Remove (Item item)
+    public void Remove(Item item)
     {
         items.Remove(item);
 
@@ -83,16 +87,19 @@ public class Inventory : MonoBehaviour
     {
         ClearInventory();
         SaveGameItem.SerializeTexture importObj = new SaveGameItem.SerializeTexture();
+        Debug.Log("inventory list: " + data.inventoryList);
 
         string[] loadedItemList = data.inventoryList.Split(' ');
-        Debug.Log("Equipment list--------------------------------- = " + loadedItemList);
-
+        Debug.Log("Inventory list--------------------------------- = " + loadedItemList);
 
         foreach (string item in loadedItemList)
         {
             if (item != "")
             {
+                Debug.Log("Adding the item with ID: " + item);
+
                 Equipment n_Item = ScriptableObject.CreateInstance<Equipment>();
+
                 n_Item = allEquipment[int.Parse(item)];
 
                 Add(n_Item);
@@ -119,7 +126,8 @@ public class Inventory : MonoBehaviour
     }
 
     public void ClearInventory()
-    { 
+    {
+        Debug.Log("Clearing inventory");
         foreach (Equipment item in Inventory.instance.items)
         {
             Remove(item);

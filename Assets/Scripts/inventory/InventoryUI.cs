@@ -2,6 +2,7 @@
 
 public class InventoryUI : MonoBehaviour
 {
+    
     //to be able to find the children of items parent (making public variable so we can just drag and drop the parent in the Unity UI)
     public Transform itemsParent;
 
@@ -41,7 +42,7 @@ public class InventoryUI : MonoBehaviour
         }
     }
 
-    void UpdateUI()
+    public void UpdateUI()
     {
         //LOOPING through each slot
         for (int i = 0; i < slots.Length; i++)

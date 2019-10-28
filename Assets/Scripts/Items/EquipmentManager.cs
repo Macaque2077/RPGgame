@@ -166,7 +166,7 @@ public class EquipmentManager : MonoBehaviour
     public void LoadEquipment(Person data)
     {
         UnequipAll();
-        Debug.Log(data.inventoryList);
+        
         string[] loadedEquipList = data.equippedList.Split(' ');
         Debug.Log("Equipment list--------------------------------- = " + loadedEquipList.Length);
 

@@ -85,8 +85,6 @@ public class DataService  {
             return true;
         }
             ).ToList();
-
-
     }
     public void Store<T>(T Record)
     {
@@ -200,7 +198,7 @@ public class DataService  {
     }
 
     //used to find and return the users login details from the DB
-    internal static Person CheckLoginExists(string prUsername, string prPassword)
+    public Person CheckLoginExists(string prUsername, string prPassword)
     {
         try
         {

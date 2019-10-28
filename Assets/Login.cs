@@ -1,8 +1,18 @@
 ﻿using UnityEngine.UI;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Login : MonoBehaviour
 {
+
+    #region Singleton
+    public static Login instance;
+
+    void Awake()
+    {
+        instance = this;
+    }
+    #endregion
     InputField inputName;
 
     InputField inputPassword;
@@ -23,8 +33,10 @@ public class Login : MonoBehaviour
 
     }
 
-    void checkLogin()
+    public void checkLogin()
     {
+        Debug.Log("checking login");
+        var DB = new DataService("existing.db");
         //get the components to check username and password
         inputName = textUsername.GetComponent<InputField>();
         inputPassword = textPassword.GetComponent<InputField>();
@@ -33,11 +45,25 @@ public class Login : MonoBehaviour
 
         //check check db with the username
         //check if password is right 
-        Person currentplayer = DataService.CheckLoginExists(username, password);
+        Person currentplayer = DB.CheckLoginExists(username, password);
+
+        GameModel.currentPlayer = currentplayer;
 
         //load the game scene
-        
+        if (currentplayer != null)
+        {
+            Debug.Log("Player != null");
+            SceneManager.LoadScene("Scene1");
+
+        }
+        else
+        {
+            Debug.Log("No save found");
+            SceneManager.LoadScene("Scene1");
+
+        }
+
         //pass the current player to be loaded 
-        /* Person playerLogin = DataService.GetLogin(username);*/
+        //Person playerLogin = DataService.GetLogin(username);
+        }
     }
-}

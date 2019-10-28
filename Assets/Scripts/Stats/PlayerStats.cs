@@ -5,6 +5,15 @@ using UnityEngine;
 
 public class PlayerStats : CharacterStats  
 {
+    public static PlayerStats instance;
+
+    #region Singleton
+    private void Awake()
+    {
+        instance = this;
+    }
+
+    #endregion
     // Start is called before the first frame update
     void Start()
     {

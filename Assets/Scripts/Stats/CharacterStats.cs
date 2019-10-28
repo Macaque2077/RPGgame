@@ -11,7 +11,7 @@ public class CharacterStats : MonoBehaviour
     public int maxHealth = 100;
 
     //any class can get this value but it can only be set from within this class
-    public int currentHealth { get; private set; }
+    public int currentHealth { get; set; }
 
     //characters damage and armor stats
     public Stat damage;
@@ -83,7 +83,7 @@ public class CharacterStats : MonoBehaviour
         Debug.Log("4");
     }
 
-    public void LoadPlayer()
+/*    public void LoadPlayer()
     {
 
         //JSON load
@@ -100,33 +100,18 @@ public class CharacterStats : MonoBehaviour
         EquipmentManager.instance.LoadEquipment(people);
 
         //send items to inventory to be loaded
-        Inventory.instance.loadItems(people);
+        //Inventory.instance.loadItems(people);
 
 
-        //DB load
-
-
-        //send equipment ot be loaded onto character
-        //EquipmentManager.instance.LoadEquipment(data);
-
-
-/*        Vector3 position;
+*//*       Vector3 position;
         position.x = data.position[0];
         position.y = data.position[1];
         position.z = data.position[2];
 
-        transform.position = position;*/
+        transform.position = position;*//*
 
-    }
+    }*/
 
-    public void loadPostLogin (Person prCurrentPlayer)
-    {
-        currentHealth = prCurrentPlayer.health;
-        //load equipped inventory, must be done first as removed equipment will be added to inventory to then be removed by loadItems
-        EquipmentManager.instance.LoadEquipment(prCurrentPlayer);
 
-        //send items to inventory to be loaded
-        Inventory.instance.loadItems(prCurrentPlayer);
-    }
 
 }
