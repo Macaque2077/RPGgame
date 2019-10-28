@@ -2,7 +2,17 @@
 
 public class InventoryUI : MonoBehaviour
 {
-    
+
+    #region Singleton
+
+    public static InventoryUI instance;
+    private void Awake()
+    {
+        instance = this;
+    }
+
+    #endregion
+
     //to be able to find the children of items parent (making public variable so we can just drag and drop the parent in the Unity UI)
     public Transform itemsParent;
 

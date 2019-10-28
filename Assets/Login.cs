@@ -48,18 +48,18 @@ public class Login : MonoBehaviour
         Person currentplayer = DB.CheckLoginExists(username, password);
 
         GameModel.currentPlayer = currentplayer;
-
+        
         //load the game scene
         if (currentplayer != null)
         {
             Debug.Log("Player != null");
             SceneManager.LoadScene("Scene1");
-
+            PlayerStats.instance.LoadPlayer();
         }
         else
         {
             Debug.Log("No save found");
-            SceneManager.LoadScene("Scene1");
+            //SceneManager.LoadScene("Scene1");
 
         }
 

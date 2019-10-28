@@ -10,6 +10,8 @@ public class CharacterStats : MonoBehaviour
 {
     public int maxHealth = 100;
 
+    public int score = 0;
+
     //any class can get this value but it can only be set from within this class
     public int currentHealth { get; set; }
 
@@ -83,34 +85,25 @@ public class CharacterStats : MonoBehaviour
         Debug.Log("4");
     }
 
-/*    public void LoadPlayer()
+    public void LoadPlayer()
     {
-
-        //JSON load
-        //JSONsave save = new JSONsave();
-        //PlayerSaveData data = save.DeSerializeTest();
 
         //DB Load
         var ds = new DataService("existing.db");
-        //Person people = ds.GetPersons().First();
-        Person people = ds.GetPlayer().First();
 
-        currentHealth = people.health;
+        Person player = ds.GetPlayer().First();
+
+        currentHealth = player.health;
         //load equipped inventory, must be done first as removed equipment will be added to inventory to then be removed by loadItems
-        EquipmentManager.instance.LoadEquipment(people);
+        EquipmentManager.instance.LoadEquipment(player);
 
         //send items to inventory to be loaded
-        //Inventory.instance.loadItems(people);
+        Inventory.instance.loadItems(player);
 
+        GameManager.instance.setCurrentPlayer(player);
+        GameManager.instance.updateScore();
+    }
 
-*//*       Vector3 position;
-        position.x = data.position[0];
-        position.y = data.position[1];
-        position.z = data.position[2];
-
-        transform.position = position;*//*
-
-    }*/
 
 
 

@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -12,13 +13,23 @@ public class GameManager : MonoBehaviour
 
     private bool gamestate = GameModel.dummy;
 
+    public GameObject scoreText;
+    Text text;
+
     Person currentPlayer;
     // Start is called before the first frame update
     void Start()
     {
-        Debug.Log("loading save-------------");
-        PlayerManager.instance.loadPlayerSave(GameModel.currentPlayer);
-        
+        //Debug.Log("loading save-------------");
+        //PlayerManager.instance.loadPlayerSave(GameModel.currentPlayer);
+        //PlayerStats.instance.LoadPlayer();
+
+    }
+
+    public void updateScore()
+    {
+        text = scoreText.GetComponent<Text>();
+        text.text = "Score: " + currentPlayer.score;
     }
 
     public void setCurrentPlayer(Person player)
@@ -32,9 +43,5 @@ public class GameManager : MonoBehaviour
         PlayerManager.instance.PlayerSaveManager();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+
 }

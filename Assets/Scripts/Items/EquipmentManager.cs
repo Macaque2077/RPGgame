@@ -121,6 +121,7 @@ public class EquipmentManager : MonoBehaviour
     //for each item in default items equip it
     void EquipDefaultItems()
     {
+        Debug.Log("equipping default items");
         foreach (Equipment item in defaultItems)
         {
             Equip(item);
