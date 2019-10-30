@@ -29,7 +29,7 @@ public class GameManager : MonoBehaviour
     public void updateScore()
     {
         text = scoreText.GetComponent<Text>();
-        text.text = "Score: " + currentPlayer.score;
+        text.text = "Score: " + GameModel.currentPlayer.score;
     }
 
     public void setCurrentPlayer(Person player)

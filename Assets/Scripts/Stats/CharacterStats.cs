@@ -10,7 +10,7 @@ public class CharacterStats : MonoBehaviour
 {
     public int maxHealth = 100;
 
-    
+    //private DataService Db = new DataService("existing.db");
 
     //any class can get this value but it can only be set from within this class
     public int currentHealth { get; set; }
@@ -76,8 +76,8 @@ public class CharacterStats : MonoBehaviour
 
         //db Save
         var ds = new DataService("existing.db");
-        //Debug.Log("1");
-        //ds.CreatePerson();
+
+
         Debug.Log("2");
         ExistingDBScript save = new ExistingDBScript();
         Debug.Log("3");
@@ -91,7 +91,9 @@ public class CharacterStats : MonoBehaviour
         //DB Load
         var ds = new DataService("existing.db");
 
-        Person player = ds.GetPlayer().First();
+        //Person player = Db.GetPlayer().First();
+
+        Person player = GameModel.currentPlayer; 
 
         currentHealth = player.health;
         //load equipped inventory, must be done first as removed equipment will be added to inventory to then be removed by loadItems
@@ -100,7 +102,7 @@ public class CharacterStats : MonoBehaviour
         //send items to inventory to be loaded
         Inventory.instance.loadItems(player);
 
-        GameManager.instance.setCurrentPlayer(player);
+        GameModel.currentPlayer = player;
         GameManager.instance.updateScore();
     }
 

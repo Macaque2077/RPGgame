@@ -18,9 +18,7 @@ public class CreateDBScript : MonoBehaviour {
         
         var people = ds.GetPersons ();
         ToConsole (people);
-        //people = ds.GetPersonsNamedRoberto ();
-        //ToConsole("Searching for Roberto ...");
-        Debug.Log("FECK----------------------");
+
     }
 	
 	private void ToConsole(IEnumerable<Person> people){

@@ -12,13 +12,6 @@ public class ExistingDBScript : MonoBehaviour {
         Debug.Log("5.1");
         var ds = new DataService("existing.db");
         Debug.Log("5.2");
-        //ds.CreateDB ();
-        var people = ds.GetPersons();
-        ToConsole(people);
-
-        //people = ds.GetPersonsNamedRoberto ();
-        //ToConsole("Searching for Roberto ...");
-        //ToConsole(people);
 
         //to overwrite the current players save 
         //var p = ds.OverwriteSave();

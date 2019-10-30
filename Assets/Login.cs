@@ -17,9 +17,13 @@ public class Login : MonoBehaviour
 
     InputField inputPassword;
 
+    Text outputMessage;
+
     public GameObject textUsername;
 
     public GameObject textPassword;
+
+    public GameObject textMessage;
 
     // Start is called before the first frame update
     void Start()
@@ -40,6 +44,7 @@ public class Login : MonoBehaviour
         //get the components to check username and password
         inputName = textUsername.GetComponent<InputField>();
         inputPassword = textPassword.GetComponent<InputField>();
+        outputMessage = textMessage.GetComponent<Text>();
         string username = inputName.text;
         string password = inputPassword.text;
 
@@ -59,6 +64,7 @@ public class Login : MonoBehaviour
         else
         {
             Debug.Log("No save found");
+            outputMessage.text = "No Login found with that username and password please try again";
             //SceneManager.LoadScene("Scene1");
 
         }

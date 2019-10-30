@@ -20,5 +20,6 @@ public class EnemyStats : CharacterStats
         Destroy(gameObject);
 
         GameModel.currentPlayer.score += 10;
+        GameManager.instance.updateScore();
     }
 }
