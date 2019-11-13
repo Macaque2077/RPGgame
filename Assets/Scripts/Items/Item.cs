@@ -23,6 +23,7 @@ public class Item : ScriptableObject
     public void removeFromInventory()
     {
         Inventory.instance.Remove(this);
+        Inventory.instance.itemsChanged();
     }
 
     //A way to convert save game item back to regular item when loading game

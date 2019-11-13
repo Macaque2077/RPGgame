@@ -3,6 +3,7 @@ using System;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.IO;
 using System.Linq;
+using System.Collections.Generic;
 
 [Serializable]
 //part of a charecter defines their stats
@@ -13,7 +14,7 @@ public class CharacterStats : MonoBehaviour
     //private DataService Db = new DataService("existing.db");
 
     //any class can get this value but it can only be set from within this class
-    public int currentHealth { get; set; }
+    public int actualHealth { get; set; }
 
     //characters damage and armor stats
     public Stat damage;
@@ -24,13 +25,13 @@ public class CharacterStats : MonoBehaviour
     //sets health to equal max health at the start of the game
     void Awake()
     {
-        currentHealth = maxHealth;
+        actualHealth = maxHealth;
 
     }
 
     void Update()
     {
-        if (Input.GetKeyUp(KeyCode.U))
+        if (Input.GetKeyUp(KeyCode.J))
         {
             TakeDamage(50);
         }
@@ -46,10 +47,10 @@ public class CharacterStats : MonoBehaviour
 
 
         // subtracts damage from health
-        currentHealth -= damage;
+        actualHealth -= damage;
         Debug.Log(transform.name + " takes " + damage + " damage.");
 
-        if (currentHealth <= 0)
+        if (actualHealth <= 0)
         {
             Die();
 
@@ -69,44 +70,86 @@ public class CharacterStats : MonoBehaviour
 
     public void SavePlayer()
     {
-        //json save
+        JSONDropService jsDrop = new JSONDropService { Token = "c3f6c81c-0f28-4922-9a1e-9ef0cb0265bb" };
+        jsDrop.Store<Person, JsnReceiver>(new List<Person>
+        {
+            GameModel.currentPlayer
+            //new Person { id = 1, name = "player", health = 100, inventoryList = "2", equippedList = "6 5 4 3", password = "player", score = 100 }
 
-        /*        JSONsave save = new JSONsave();
-                save.SerializeTest(this);*/
+         }, jsnReceiverDel) ;
 
-        //db Save
-        var ds = new DataService("existing.db");
-
-
-        Debug.Log("2");
+        //old save
+/*        Debug.Log("2");
         ExistingDBScript save = new ExistingDBScript();
         Debug.Log("3");
         save.DBDOME();
-        Debug.Log("4");
+        Debug.Log("4");*/
+    }
+
+    private void jsnReceiverDel(JsnReceiver pReceived)
+    {
+        Debug.Log(pReceived.JsnMsg + " ..." + pReceived.Msg);
     }
 
     public void LoadPlayer()
     {
 
-        //DB Load
-        var ds = new DataService("existing.db");
 
-        //Person player = Db.GetPlayer().First();
+        /*        var DB = new DataService("existing.db");
+                Person player = DB.CheckLoginExists(GameModel.currentPlayer.name, GameModel.currentPlayer.password);*/
+        JSONDropService jsDrop = new JSONDropService { Token = "c3f6c81c-0f28-4922-9a1e-9ef0cb0265bb" };
+        jsDrop.Select<Person, JsnReceiver>($"id = {GameModel.currentPlayer.id}", jsnListReceiverDel, jsnReceiverDel);
 
-        Person player = GameModel.currentPlayer; 
+/*        Debug.Log("inventory list load----------------------------------- " + GameModel.currentPlayer.inventoryList);
 
-        currentHealth = player.health;
+        //currentHealth = player.health;
         //load equipped inventory, must be done first as removed equipment will be added to inventory to then be removed by loadItems
-        EquipmentManager.instance.LoadEquipment(player);
+        EquipmentManager.instance.LoadEquipment();
 
         //send items to inventory to be loaded
-        Inventory.instance.loadItems(player);
+        try
+        {
+            Inventory.instance.loadItems(player);
+            //tempData.instance.loadItems();
+        }
+        catch(Exception ex)
+        {
+            Debug.Log("Enumeration error here: " + ex);
+        }
 
-        GameModel.currentPlayer = player;
-        GameManager.instance.updateScore();
+        GameManager.instance.updateScore();*/
+        //GameModel.currentPlayer = player;
     }
 
+    private void jsnListReceiverDel(List<Person> pReceived)
+    {
 
+        string inventoryList = pReceived[0].inventoryList;
+        if (pReceived.Count == 1)
+        {
+            Debug.Log("1");
+            GameModel.currentPlayer = pReceived[0];
+            Debug.Log("2");
+            EquipmentManager.instance.LoadEquipment();
+            Debug.Log("3");
+            //send items to inventory to be loaded
+            try
+            {
 
+                Inventory.instance.loadItems(inventoryList);
+                Debug.Log("4");
+            }
+            catch (Exception ex)
+            {
+                Debug.Log("Enumeration error here: " + ex);
+            }
+            GameManager.instance.updateScore();
+        }
+        else
+        {
+            Debug.Log("Multiple Saves found, please contact developer or create new save");
+        }
 
+        
+    }
 }

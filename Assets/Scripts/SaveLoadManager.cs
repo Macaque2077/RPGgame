@@ -61,7 +61,7 @@ public class PlayerSaveData
     //populates the save data to be saved 
     public PlayerSaveData(CharacterStats PlayerStats)
     {
-        health = PlayerStats.currentHealth;
+        health = PlayerStats.actualHealth;
         foreach (Equipment item in Inventory.instance.items)
         {
             //get the items in inventory

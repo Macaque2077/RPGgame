@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using System;
 using UnityEngine;
 
-
+[Serializable]
 public class Person  {
 
    
     [PrimaryKey, AutoIncrement]
+    //public Boolean isAutoInc { get; set; }  
     public int id { get; set; }
     public string name { get; set; }
     public string password { get; set; }

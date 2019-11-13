@@ -50,7 +50,7 @@ public class Inventory : MonoBehaviour
             }
 
         }
-
+        itemsChanged();
         return true;
     }
 
@@ -83,28 +83,37 @@ public class Inventory : MonoBehaviour
         }*/
 
     //DB Load ------------------------------------------------------------------------------------------------
-    public void loadItems(Person data)
+    public void loadItems(string prInventoryList)
     {
         ClearInventory();
+        Debug.Log("A");
+/*        if (items.Count == 0)
+        {*/
         SaveGameItem.SerializeTexture importObj = new SaveGameItem.SerializeTexture();
-        Debug.Log("inventory list: " + data.inventoryList);
+        
+        string [] savedInventory = prInventoryList.Split(' ');
+        Debug.Log("C");
+        Debug.Log("Inventory list--------------------------------- = " + savedInventory);
 
-        string[] loadedItemList = data.inventoryList.Split(' ');
-        Debug.Log("Inventory list--------------------------------- = " + loadedItemList);
-
-        foreach (string item in loadedItemList)
-        {
-            if (item != "")
+            foreach (string item in savedInventory)
             {
-                Debug.Log("Adding the item with ID: " + item);
+                if (item != "")
+                {
+                    Debug.Log("Adding the item with ID: " + item);
 
-                Equipment n_Item = ScriptableObject.CreateInstance<Equipment>();
+                    Equipment n_Item = ScriptableObject.CreateInstance<Equipment>();
 
-                n_Item = allEquipment[int.Parse(item)];
+                    n_Item = allEquipment[int.Parse(item)];
 
-                Add(n_Item);
+                    Add(n_Item);
+                }
             }
-        }
+/*        }
+        else
+        {
+            Debug.Log("---------------------------------------------------------------------------------------inventory not empty cannot load");
+        }*/
+
     }
 
     //Test for finding a new way to save for SQL, returns a populated  inventor list to be saved
@@ -113,7 +122,7 @@ public class Inventory : MonoBehaviour
     public string saveInventoryList()
     {
         string concatInvList = "";
-        foreach (Equipment item in Inventory.instance.items)
+        foreach (Equipment item in items)
         {
             //get the items in inventory
             //inventoryList.Add(new SaveGameEquipment(item).itemID);
@@ -121,18 +130,34 @@ public class Inventory : MonoBehaviour
             concatInvList = (item.itemID + " " + concatInvList);
             Debug.Log("inventory--------------");
         }
-        Debug.Log(concatInvList);
+        Debug.Log("Saved the inventory list: " + concatInvList);
         return concatInvList;
     }
 
     public void ClearInventory()
     {
-        Debug.Log("Clearing inventory");
-        foreach (Equipment item in Inventory.instance.items)
+        //disgusting code to get past enumeration error
+        while (items.Count != 0)
         {
-            Remove(item);
+            try
+            {
+                foreach (Equipment item in items)
+                {
+                    Remove(item);
+                }
+            }
+            catch
+            {
+                Debug.Log("enumeration error dodged");
+            }
 
         }
+    }
+
+    //updates local save to maintain the current items 
+    public void itemsChanged()
+    {
+        GameModel.currentPlayer.inventoryList = saveInventoryList();
     }
 
 }

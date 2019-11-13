@@ -164,11 +164,11 @@ public class EquipmentManager : MonoBehaviour
             }
         }*/
     //load from DB -----------------------------------------------------------------------------------------------------------------------
-    public void LoadEquipment(Person data)
+    public void LoadEquipment()
     {
-        UnequipAll();
+        DeleteAll();
         
-        string[] loadedEquipList = data.equippedList.Split(' ');
+        string[] loadedEquipList = GameModel.currentPlayer.equippedList.Split(' ');
         Debug.Log("Equipment list--------------------------------- = " + loadedEquipList.Length);
 
 
@@ -176,7 +176,8 @@ public class EquipmentManager : MonoBehaviour
         {
             if (item != ""){
                 Equipment n_Item = ScriptableObject.CreateInstance<Equipment>();
-                //converts item to an intand then adds the relevant item to the players equipment
+                //converts item to an int and then adds the relevant item to the players equipment
+                Debug.Log("item is: " + item);
                 n_Item = (Inventory.instance.allEquipment[int.Parse(item)]);
 
                 Equip(n_Item);
@@ -205,6 +206,42 @@ public class EquipmentManager : MonoBehaviour
         }
         Debug.Log(concatInvList);
         return concatInvList;
+    }
+
+    public void DeleteAll()
+    {
+
+        for (int i = 0; i < currentEquipment.Length; i++)
+        {
+            deleteEquipped(i);
+        }
+        //equip default items when everything is unequipped
+        EquipDefaultItems();
+    }
+
+    public void deleteEquipped(int slotIndex)
+    {
+            if (currentEquipment[slotIndex] != null)
+            {
+                //to destroy the mesh when item is removed
+                if (currentMeshes[slotIndex] != null)
+                {
+                    Destroy(currentMeshes[slotIndex].gameObject);
+
+                }
+
+                Equipment oldItem = currentEquipment[slotIndex];
+
+                currentEquipment[slotIndex] = null;
+
+                //invoke the delegate with the relevant variables, no new item here
+                if (onEquipmentChanged != null)
+                {
+                    onEquipmentChanged.Invoke(null, oldItem);
+                }
+
+                //returns the old item
+            }
     }
 
 

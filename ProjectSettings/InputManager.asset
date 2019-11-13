@@ -297,8 +297,8 @@ InputManager:
     m_Name: Inventory
     descriptiveName: 
     descriptiveNegativeName: 
-    negativeButton: 1
-    positiveButton: 2
+    negativeButton: i
+    positiveButton: i
     altNegativeButton: 
     altPositiveButton: joystick button 1
     gravity: 1000

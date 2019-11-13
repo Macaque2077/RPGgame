@@ -17,6 +17,7 @@ public class PlayerStats : CharacterStats
     // Start is called before the first frame update
     void Start()
     {
+        actualHealth = maxHealth;
         EquipmentManager.instance.onEquipmentChanged += OnEquipmentChanged;   
     }
 
@@ -35,6 +36,14 @@ public class PlayerStats : CharacterStats
             armor.RemoveModifier(OldItem.armorModifier);
             damage.RemoveModifier(OldItem.damage);
         }
+
+    }
+
+    public override void Die()
+    {
+        base.Die();
+        //kill the player
+        GameManager.instance.KillPlayer();
     }
 
 }

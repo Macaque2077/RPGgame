@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &8763084340737153338
+--- !u!1 &2675577692557847383
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,8 +8,8 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 3125987312050827564}
-  - component: {fileID: 6290080467893668059}
+  - component: {fileID: 8636929500654420801}
+  - component: {fileID: 862421327475079862}
   m_Layer: 0
   m_Name: Shirt
   m_TagString: Untagged
@@ -17,13 +17,13 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &3125987312050827564
+--- !u!4 &8636929500654420801
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8763084340737153338}
+  m_GameObject: {fileID: 2675577692557847383}
   m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
   m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -31,13 +31,13 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!137 &6290080467893668059
+--- !u!137 &862421327475079862
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8763084340737153338}
+  m_GameObject: {fileID: 2675577692557847383}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -48,8 +48,8 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 7c87bb4559289844cb5dbc5060dd8f04, type: 2}
-  - {fileID: 2100000, guid: d377b887440cc994197301788712f984, type: 2}
+  - {fileID: 2100000, guid: 19396fb39b6d99447ba22a2e8fabf6bb, type: 2}
+  - {fileID: 2100000, guid: d546895266388474facbba2e97453146, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -109,9 +109,11 @@ SkinnedMeshRenderer:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   m_BlendShapeWeights: []
   m_RootBone: {fileID: 0}
   m_AABB:
-    m_Center: {x: -0.005476624, y: 0.36500856, z: 0.117428064}
-    m_Extent: {x: 0.32885978, y: 0.40228418, z: 0.44980967}
+    m_Center: {x: 0.0033752173, y: 0.3585251, z: 0.07082161}
+    m_Extent: {x: 0.3778293, y: 0.39107043, z: 0.22325888}
   m_DirtyAABB: 0

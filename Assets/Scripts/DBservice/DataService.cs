@@ -11,9 +11,9 @@ using System.Collections.Generic;
 
 public class DataService  {
 
-	private static SQLiteConnection _connection;
+	private   SQLiteConnection _connection;
 
-    public static SQLiteConnection Connection
+    public  SQLiteConnection Connection
     {
         get
         {
@@ -135,7 +135,6 @@ public class DataService  {
         _connection.InsertAll(new[]{
             //look into a way topass the character stats to the player to pass the players health---------------------------------------------------
             new Person{
-                id = 1,
                 name = "player",
                 password = "player",
                 health = 100,
@@ -166,21 +165,24 @@ public class DataService  {
         }*/
     public void OverwriteSave()
     {
-/*        Debug.Log("6.1");
-        var p = new Person();
-        p.id = 1;
-        p.name = "player";
-        p.health = 100;
-        p.inventoryList = Inventory.instance.saveInventoryList();
-        p.equippedList = EquipmentManager.instance.saveEquipmentList();
-        Debug.Log("6");*/
+        /*        Debug.Log("6.1");
+                var p = new Person();
+                p.id = 1;
+                p.name = "player";
+                p.health = 100;
+                p.inventoryList = Inventory.instance.saveInventoryList();
+                p.equippedList = EquipmentManager.instance.saveEquipmentList();
+                Debug.Log("6");*/
+        GameModel.currentPlayer.health = PlayerStats.instance.actualHealth;
+        GameModel.currentPlayer.equippedList = EquipmentManager.instance.saveEquipmentList();
+        GameModel.currentPlayer.inventoryList = Inventory.instance.saveInventoryList();
         _connection.InsertOrReplace(GameModel.currentPlayer);
 
 
         
     }
 
-    internal static bool CheckUserDuplicate(string prUsername)
+    internal  bool CheckUserDuplicate(string prUsername)
     {
         try
         {
@@ -221,7 +223,6 @@ public class DataService  {
     public Person CreatePerson(){
         
         var p = new Person();
-        p.id = 1;
         p.name = "player";
         p.health = 100;
         p.inventoryList = Inventory.instance.saveInventoryList();

@@ -25,21 +25,20 @@ public class PlayerManager : MonoBehaviour
         }
     }
 
-    public void loadPlayerSave()
+/*    public void loadPlayerSave()
     {
         Debug.Log("loading save-------------");
-        Person lcCurrentPlayer = GameModel.currentPlayer;
-        PlayerStats.instance.currentHealth = lcCurrentPlayer.health;
+        PlayerStats.instance.currentHealth = GameModel.currentPlayer.health;
 
-        Inventory.instance.loadItems(lcCurrentPlayer);
+        Inventory.instance.loadItems(GameModel.currentPlayer);
         //load equipped inventory, must be done first as removed equipment will be added to inventory to then be removed by loadItems
-        EquipmentManager.instance.LoadEquipment(lcCurrentPlayer);
+        EquipmentManager.instance.LoadEquipment();
 
         //send items to inventory to be loaded
         
 
         InventoryUI.instance.UpdateUI();
-    }
+    }*/
 
     public void PlayerSaveManager()
     {

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine.UI;
 
-public class ExistingDBScript : MonoBehaviour {
+public class ExistingDBScript {
 
 	public Text DebugText;
 
